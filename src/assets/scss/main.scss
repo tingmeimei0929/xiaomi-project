@@ -1,0 +1,157 @@
+.main{
+    width: 100%;
+    overflow: hidden;
+
+    .container{
+        position: relative;
+        width: 1226px;
+        margin-left: auto;
+        margin-right: auto;
+
+
+    .swiper-row {
+        position: relative;
+        margin-top: 0;
+        width: 1226px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 460px;
+  
+        .swiper-container {
+          position: relative;
+          width: 1226px;
+          height: 460px;
+          z-index: 10px;
+  
+          img {
+            width: 1226px;
+            height: 460px;
+          }
+  
+          .swiper-button-prev {
+            width: 30px;
+            height: 50px;
+            margin-left: 240px;
+            color: #ccc;
+          }
+  
+          .swiper-button-next {
+            width: 30px;
+            height: 50px;
+            color: #ccc;
+          }
+  
+          .swiper-pagination {
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            bottom: 15px;
+            left: 1100px;
+            color: #ccc;
+          }
+        }
+  
+        .category-item {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 500;
+          display: block;
+          float: left;
+          width: 234px;
+          border: 0;
+          font-size: 14px;
+          padding: 20px 0;
+          background-color: rgba(105, 101, 101, 0.6);
+  
+          li {
+            width: 234px;
+            height: 42px;
+  
+  
+            .main-menu {
+              position: relative;
+              width: 234px;
+              height: 42px;
+              line-height: 42px;
+              padding-left: 30px;
+              text-align: start;
+  
+              a {
+                color: #fff;
+                cursor: pointer;
+  
+                i {
+                  position: absolute;
+                  right: 20px;
+                  top: 11px;
+                }
+              }
+            }
+  
+            .main-menu:hover {
+              background-color: #ff6700;
+            }
+  
+            .sub-menu {
+              position: absolute;
+              top: 0;
+              left: 235px;
+              z-index: 999;
+              height: 460px;
+              width: 992px;
+              border: 1px solid #e0e0e0;
+              background-color: #fff;
+              display: none;
+  
+              .item-list {
+                width: 243px;
+                height: 460px;
+                display: block;
+                float: left;
+                margin-right: 2px;
+  
+                li {
+                  display: block;
+                  width: 240px;
+                  height: 76px;
+                  line-height: 76px;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  -o-text-overflow: ellipsis; 
+  
+                  a {
+                    display: block;
+                    padding: 18px 20px;
+                    line-height: 40px;
+                    color: #333;
+                    font-size: 14px;
+                    text-align: start;
+  
+                    img {
+                      width: 40px;
+                      height: 40px;
+                      vertical-align: middle;
+                    }
+  
+                    .text {
+                      width: 172px;
+                      line-height: 40px;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                    }
+                  }
+                }
+              }
+            }
+          }
+  
+          li:hover .sub-menu {
+            display: block;
+          }
+        }
+      }
+  
+    }
+}

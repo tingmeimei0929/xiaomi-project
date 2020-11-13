@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    min-width: 1226px;
+    background-color: #fff;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+  }
+  
+  ul,
+  ol,
+  li {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  button,
+  input,
+  select {
+    outline: none;
+  }
+  
+  input {
+    border: none;
+  }
+  
+  @media (min-width:768px) {
+      .el-aside{
+          display: block;
+      }
+  }
