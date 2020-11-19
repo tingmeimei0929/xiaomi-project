@@ -15,7 +15,7 @@
             <li v-if="username">我的订单</li>
             <li class="cartLi"
                 @click="cart">
-                <i class="el-icon-aligouwuchekong"></i>购物车<span>{{cartCount}}</span>
+                <i class="icon iconfont el-icon-aligouwuchekong"></i>购物车<span>{{cartCount}}</span>
             </li>
             </ul>
             <el-dialog title="小米商城用户协议"

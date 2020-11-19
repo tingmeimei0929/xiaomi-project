@@ -2,12 +2,12 @@
   <div class="footer">
     <div class="container">
       <div class="footer-title">
-        <a href="//www.mi.com/static/fast/"><i class="el-icon-aligongju"></i>预约维修服务</a>
-        <a href="//www.mi.com/service/exchange#back"><i class="el-icon-ali7tiantuihuanhuo"></i>7天无理由退货</a>
-        <a href="//www.mi.com/service/exchange#back"><i class="el-icon-ali15tianwuliyoutuihuo"></i>15天免费换货</a>
-        <a href="//www.mi.com/service/buy/Postal%20policy"><i class="el-icon-aliliwu"></i>满99元包邮</a>
+        <a href="//www.mi.com/static/fast/"><i class="icon iconfont el-icon-aligongju"></i>预约维修服务</a>
+        <a href="//www.mi.com/service/exchange#back"><i class="icon iconfont el-icon-ali7tiantuihuanhuo"></i>7天无理由退货</a>
+        <a href="//www.mi.com/service/exchange#back"><i class="icon iconfont el-icon-ali15tianwuliyoutuihuo"></i>15天免费换货</a>
+        <a href="//www.mi.com/service/buy/Postal%20policy"><i class="icon iconfont el-icon-aliliwu"></i>满99元包邮</a>
         <a href="//www.mi.com/static/maintainlocation/"
-           class="last-title"><i class="el-icon-aliding_wei"></i>520余家售后网点</a>
+           class="last-title"><i class="icon iconfont el-icon-aliding_wei"></i>520余家售后网点</a>
       </div>
       <div class="footer-links">
         <div class="links-left">
@@ -54,8 +54,8 @@
         <div class="links-right">
           <h2>400-100-5678</h2>
           <p>8:00-18:00(仅收市话费)</p>
-          <button><i class="el-icon-alixinxi"></i>人工服务</button>
-          <div>关注小米:<i class="el-icon-aliweibo"></i><i class="el-icon-aliweixin"></i></div>
+          <button><i class="icon iconfont el-icon-alixinxi"></i>人工服务</button>
+          <div>关注小米:<i class="icon iconfont el-icon-aliweibo"></i><i class="icon iconfont el-icon-aliweixin"></i></div>
         </div>
       </div>
     </div>
