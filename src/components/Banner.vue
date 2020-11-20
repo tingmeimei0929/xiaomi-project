@@ -285,5 +285,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("../assets/scss/banner.scss");
+@import url("../assets/scss/navbar.scss");
 </style>

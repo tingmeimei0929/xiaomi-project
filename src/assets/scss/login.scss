@@ -1,0 +1,422 @@
+.container {
+    position: relative;
+    width: 1226px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  
+    .top {
+      margin-left: 50px;
+      width: 200px;
+      height: 98px;
+      background:
+        url(https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png) no-repeat;
+  
+      a {
+        cursor: pointer;
+      }
+    }
+  
+    .middle {
+      background: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/72644d9b8031286de3cc74e151aefd90.jpg")  no-repeat;
+      background-position: top center;
+      position: relative;
+      margin-top: 0;
+      width: 100%;
+      height: 556px;
+      min-height: 556px;
+      font-size: 14px;
+  
+      .type {
+        width: 410px;
+        height: 516px;
+        background-color: #fff;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+  
+  
+  
+        .login-title {
+          width: 410px;
+          height: 87px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 27px 0 24px;
+          text-align: center;
+          font-size: 24px;
+  
+          cursor: pointer;
+  
+          .linkColor {
+            color: #666 !important;
+          }
+  
+          .linkColor:hover {
+            color: #f56600;
+          }
+  
+          .user {
+            color: #f56600;
+          }
+  
+          span {
+            width: 1px;
+            height: 24px;
+            margin: 0 35px 0 42px;
+            border: 1px solid #e0e0e0;
+          }
+        }
+  
+        .login-type {
+          width: 410px;
+          height: 474px;
+          position: absolute;
+          left: 0;
+          top: 87px;
+  
+          // 二维码登录页面
+          .qr-img {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            margin-top: 100px;
+          }
+  
+          .custom {
+            width: inherit;
+            height: 56px;
+            margin-top: 14px;
+            font-size: 14px;
+            text-align: center;
+            color: #757575;
+  
+            span {
+              color: #ff6700;
+              padding: 0 5px;
+            }
+          }
+  
+          //二维码登录页面---end
+  
+          // 账号登录
+          .account {
+            margin: 0 auto;
+            width: 346px;
+            height: 48px;
+  
+  
+            input {
+              width: 346px;
+              height: 48px;
+              padding: 13px 16px 13px 14px;
+              border: 1px solid #e0e0e0;
+            }
+  
+            &.last {
+              margin: 20px auto;
+            }
+  
+  
+          }
+  
+          // 短信验证码登录
+          .smsPush {
+            margin: 0 auto;
+            width: 346px;
+            height: 48px;
+            border: 1px solid #e0e0e0;
+  
+            .number {
+              width: 80px;
+              height: 48px;
+              line-height: 48px;
+              float: left;
+              text-align: center;
+              border-right: 1px solid #e0e0e0;
+            }
+  
+            .phoneInput {
+              width: auto;
+              height: inherit;
+              float: left;
+  
+              input {
+                width: 236px;
+                height: 22px;
+                line-height: 22px;
+                margin:13px 0 0 10px;
+                border: none;
+              }
+            }
+  
+            &.last {
+              margin: 20px auto;
+  
+              .smsInput {
+                width: auto;
+                float: left;
+                height: inherit;
+                
+  
+                input[type="text"] {
+                  width: 210px;
+                  height: 22px;
+                  line-height: 22px;
+                  margin:13px 0 0 10px;
+                  border: none;
+  
+                  &.inputEn {
+                    width: auto;
+                  }
+  
+                }
+              }
+  
+              .el-input{
+                  display: block;
+                  float: left;
+                  width: initial;
+                  
+              }
+  
+  
+              .smsBtn {
+                  max-width: 180px;
+                  padding: 3px 20px;
+                  height: inherit;
+                  line-height: inherit;
+                  overflow: hidden;
+                  border: none;
+                  color: #003ab5;
+                  cursor: pointer;
+                  text-align: center;
+                  border-left: 1px solid #e0e0e0;
+                  background-color: #fff;
+  
+                  &.smsEn{
+                      font-size: 8px;
+                      padding: 3px 0;
+                  }
+                }
+              
+            }
+  
+  
+          }
+  
+          .small {
+            width: inherit;
+            height: 20px;
+            font-size: 14px;
+            color: #666666;
+            text-align: start;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            z-index: -1;
+  
+            i {
+              margin: -1px 5px 0 0;
+              overflow: hidden;
+              display: inline-block;
+              vertical-align: middle;
+              color: #f66;
+              font-size: 14px;
+            }
+  
+            .errorPrompt {
+              vertical-align: middle;
+              color: #f66;
+            }
+          }
+  
+          .button {
+            width: 348px;
+            height: 50px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            background-color: #ff6700;
+            margin-bottom: 14px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+          }
+  
+          .prompt {
+            width: 348px;
+            height: 205px;
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+  
+  
+            .prompt-top {
+              width: inherit;
+              height: 50px;
+              margin-left: auto;
+              margin-right: auto;
+              position: relative;
+  
+              .sms-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-right: 20px;
+  
+                a {
+                  color: #ff6700;
+                  cursor: pointer;
+                }
+              }
+  
+              .other-login-type {
+                position: absolute;
+                top: 0;
+                right: 10px;
+  
+                a {
+                  color: #999;
+                  cursor: pointer;
+                }
+  
+                a:hover {
+                  color: #ff6700;
+                }
+  
+                span {
+                  padding: 0 5px;
+                  color: #999;
+                }
+              }
+            }
+  
+  
+  
+            fieldset {
+              margin-top: 100px;
+              border-top: 1px solid #e0e0e0;
+              border-left: none;
+              border-right: none;
+              border-bottom: none;
+              padding-top: 10px;
+  
+              legend {
+                font-size: 14px;
+                color: #bbb;
+              }
+            }
+  
+            .other-type {
+              width: inherit;
+              height: 36px;
+              padding: 3px 17px 0 17px;
+  
+              a {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin: 0 17px;
+  
+                i {
+                  display: block;
+                  margin: 4px auto 0;
+                  color: #fff;
+                  font-size: 18px;
+                }
+  
+                &.btn-qq {
+                  background-color: #0288d1;
+                }
+  
+                &.btn-weibo {
+                  background-color: #d32f2f;
+                }
+  
+                &.btn-weixin {
+                  background-color: #00d20d;
+                }
+  
+                &.btn-zhifubao {
+                  background-color: #0ae;
+                }
+  
+                i {
+                  width: 30px;
+                  height: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .bottom {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      background: #fff;
+      margin-top: 0;
+      padding-top: 100px;
+      z-index: 4;
+  
+      ul {
+        width: inherit;
+        height: 21px;
+        text-align: center;
+  
+        li {
+          display: inline-block;
+          height: 21px;
+          line-height: 21px;
+  
+          a {
+            height: 14px;
+            line-height: 14px;
+            padding: 0 10px;
+            color: #757575;
+            font-size: 14px;
+  
+            &.font-type {
+              color: #333 !important;
+            }
+  
+            &.privacy {
+              border-right: none !important;
+            }
+          }
+  
+          a:hover {
+            cursor: pointer;
+            color: #333;
+          }
+  
+          i {
+            color: #757575;
+            font-size: 10px;
+          }
+  
+        }
+      }
+  
+      p {
+        width: inherit;
+        height: 46px;
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 0;
+        color: #757575;
+      }
+    }
+  
+  
+  }

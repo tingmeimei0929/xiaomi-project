@@ -9,7 +9,8 @@
             </ul>
             <ul class="topbar-info">
             <li v-if="username">{{ username }}</li>
-            <li @click="dialogVisible = true" v-if="!username">登录 <span class="sep">|</span></li>
+            <!-- @click="dialogVisible = true"  -->
+            <li v-on:click="login" v-if="!username">登录 <span class="sep">|</span></li>
             <li @click="signUp" v-if="!username">注册 <span class="sep">|</span></li>
             <li>消息通知</li>
             <li v-if="username">我的订单</li>
@@ -18,7 +19,7 @@
                 <i class="icon iconfont el-icon-aligouwuchekong"></i>购物车<span>{{cartCount}}</span>
             </li>
             </ul>
-            <el-dialog title="小米商城用户协议"
+            <!-- <el-dialog title="小米商城用户协议"
                     :visible.sync="dialogVisible" width="800" style="padding: 20px">
                     <div>
                         <h2 class="floatRight">版本日期:2018年12月18日</h2>
@@ -35,7 +36,7 @@
                         <el-button @click="dialogVisible = fasle" >不同意</el-button>
                         <el-button type="primary" @click="dialogVisible = false" v-on:click="login">同意</el-button>
                     </span>
-            </el-dialog>
+            </el-dialog> -->
         </div>
   </div>
 </template>
@@ -82,12 +83,12 @@ export default {
   methods: {
     login () {
       this.$router.push({
-        path: '/LoginEn'
+        path: '/Login'
       })
     },
     signUp () {
       this.$router.push({
-        path: '/RegisteredEn'
+        path: '/Registered'
       })
     },
     cart () {

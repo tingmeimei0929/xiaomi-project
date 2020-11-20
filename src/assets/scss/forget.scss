@@ -1,0 +1,308 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #f9f9f9;
+    font-size: 14px;
+  
+    .header {
+      width: 854px;
+      margin: 0 auto;
+      padding-bottom: 10px;
+      background-color: #fff;
+      height: 456px;
+  
+      .layout-logo {
+        margin: 0 auto;
+        width: 62px;
+        padding-bottom: 40px;
+  
+  
+        .logo {
+          position: relative;
+          display: block;
+          width: 49px;
+          height: 48px;
+          cursor: default;
+          overflow: hidden;
+          background: url('https://s02.mifile.cn/assets/static/image/mi-logo.png') no-repeat 50% 50%;
+          background-color: #ff6700;
+          text-align: center;
+  
+  
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+  
+      }
+  
+      .header-title {
+        font-size: 30px;
+        font-weight: normal;
+        color: #333;
+        width: inherit;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+      }
+  
+      .form-row {
+        width: 332px;
+        padding: 30px 0;
+        margin: 0 auto;
+        line-height: 20px;
+  
+        h4 {
+          width: inherit;
+          text-align: start;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          color: #666666;
+        }
+  
+        .inputBox {
+          width: inherit;
+          height: 40px;
+          line-height: 40px;
+          padding-bottom: 15px;
+          border: 1px solid #c5c5c5;
+  
+          input {
+            width: 310px;
+            height: 20px;
+            line-height: 20px;
+            padding: 10px;
+            color: #333;
+          }
+        }
+  
+        .small {
+          width: inherit;
+          height: 20px;
+          font-size: 14px;
+          color: #666666;
+          text-align: start;
+          margin-top: 10px;
+          margin-bottom: 15px;
+          font-weight: 500;
+          z-index: -1;
+  
+          i {
+            margin: -1px 5px 0 0;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            color: #f66;
+            font-size: 14px;
+          }
+  
+          .errorPrompt {
+            vertical-align: middle;
+            color: #f66;
+          }
+        }
+  
+        p {
+          display: block;
+          width: inherit;
+          height: 50px;
+          color: #c5c5c5;
+          text-align: justify;
+  
+          a {
+            color: #46639C;
+            text-decoration: underline;
+            float: right;
+            margin-top: 10px;
+            cursor: pointer;
+          }
+        }
+  
+        button {
+          width: inherit;
+          height: 42px;
+          background-color: #ff6700;
+          margin-top: 15px;
+          border: 1px solid rgba(186, 186, 186, .3);
+          color: #fff;
+        }
+      }
+  
+    }
+  
+    .footer {
+      position: relative;
+      width: inherit;
+      text-align: center;
+      height: 80px;
+      margin-top: 50px;
+      background-color: #f9f9f9;
+  
+  
+      ul {
+        width: inherit;
+        height: 21px;
+        text-align: center;
+  
+        li {
+          display: inline-block;
+          height: 21px;
+          line-height: 21px;
+  
+          a {
+            height: 14px;
+            line-height: 14px;
+            padding: 0 10px;
+            color: #9d9d9d;
+            font-size: 14px;
+  
+            &.font-type {
+              color: #333 !important;
+            }
+  
+            &.privacy {
+              border-right: none !important;
+            }
+          }
+  
+          a:hover {
+            cursor: pointer;
+            color: #333;
+          }
+  
+          i {
+            color: #757575;
+            font-size: 10px;
+          }
+  
+        }
+      }
+  
+      p {
+        width: inherit;
+        height: 46px;
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 0;
+        color: #757575;
+      }
+    }
+  
+    .select-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      background-color: rgba(0, 0, 0, .5) !important;
+      width: 100%;
+      height: 100%;
+     
+      .select-country {
+          border: 6px solid #838383;
+          background: #fff;
+          margin: 100px auto;
+          padding: 0 14px;
+          border-radius: 5px;
+          color: #666;
+          height:355px;
+          width: 375px;
+  
+  
+          .header-text {
+              width: 332px;
+              text-align: left;
+              height: 42px;
+              margin-top: 13px;
+              line-height: 42px;
+              border-bottom: 1px solid #e6e6e6;
+              position: relative;
+              color: #1e1e1e;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 0 20px;
+  
+              a {
+              width: 22px;
+              height: 22px;
+              overflow: hidden;
+              position: absolute;
+              top: 7px;
+              right: -7px;
+              background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzNFMjE1NzM2QkQwMTFFNEJFNkE4OUZCNzE1NkM1NTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzNFMjE1NzQ2QkQwMTFFNEJFNkE4OUZCNzE1NkM1NTUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDM0UyMTU3MTZCRDAxMUU0QkU2QTg5RkI3MTU2QzU1NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDM0UyMTU3MjZCRDAxMUU0QkU2QTg5RkI3MTU2QzU1NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjYX3K8AAAA+SURBVHjaYjxz5sx/BghgZEAFYHEmdAF0NhOazv9oChmZcBgPF2NiIACYsNiP4cj/aMaiuIkJ3U50NkCAAQB+HAxztK/g2QAAAABJRU5ErkJggg==);
+              background-repeat: no-repeat;
+              background-position: center;
+              }
+          }
+  
+  
+          .regbox-select {
+              margin-top: 40px;
+              position: relative;
+              width: 332px;
+              height: 42px;
+  
+  
+              .select-block {
+              width: inherit;
+              height: 42px;
+              border: 1px solid #e8e8e8;
+              cursor: pointer;
+              text-align: left;
+  
+              .block-main {
+                  float: left;
+                  width: 275px;
+                  height: 42px;
+                  line-height: 42px;
+                  margin-left: 14px;
+                  border-right: 1px solid #e8e8e8;
+              }
+  
+              .block-aside {
+                  float: right;
+                  background: url(https://account.xiaomi.com/static/res/0eeaaed/passport/oauth/images/icon_user.png);
+                  width: 16px;
+                  height: 16px;
+                  margin: 11px 12px 0 12px;
+              }
+              }
+  
+              .country-list {
+              width: 332px;
+              background: #fff;
+              height: 280px;
+              line-height: 30px;
+              border: 1px solid #e8e8e8;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -o-box-sizing: border-box;
+              -ms-box-sizing: border-box;
+              box-sizing: border-box;
+              overflow-x: hidden;
+              overflow-y: auto;
+              position: absolute;
+              left: 0;
+              top: 42px;
+              z-index: 9999;
+              border: 1px solid #e8e8e8;
+              }
+  
+  
+          }
+  
+          button {
+              background: #ff6700;
+              border: 1px solid #ff6700;
+              color: #fff;
+              width: 122px;
+              height: 35px;
+              line-height: 35px;
+              margin: 75px auto;
+          }
+          }
+      }
+    }
+  

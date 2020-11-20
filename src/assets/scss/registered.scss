@@ -1,0 +1,223 @@
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background-color: #f9f9f9;
+    font-size: 14px;
+  
+    .layout-main {
+      width: 854px;
+      margin: 0 auto;
+      background-color: #fff;
+      position: relative;
+  
+      .layout-logo {
+        margin: 0 auto;
+        width: 62px;
+  
+  
+        .logo {
+          position: relative;
+          display: block;
+          width: 49px;
+          height: 48px;
+          cursor: default;
+          overflow: hidden;
+          background: url('https://s02.mifile.cn/assets/static/image/mi-logo.png') no-repeat 50% 50%;
+          background-color: #ff6700;
+          text-align: center;
+  
+  
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+  
+      }
+  
+      .layout-title {
+        width: inherit;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: normal;
+        color: #333;
+        margin-top: 40px;
+      }
+  
+      .layout-table {
+        position: relative;
+        width: inherit;
+  
+        .regbox {
+          width: 332px;
+          padding: 30px 0;
+          line-height: 20px;
+          margin: 0 auto;
+          font-size: 14px;
+          position: relative;
+  
+          h4 {
+            width: inherit;
+            height: 25px;
+            line-height: 25px;
+            text-align: start;
+            padding-bottom: 5px;
+            color: #333;
+            font-weight: normal;
+            margin-top: 20px;
+          }
+  
+          .regbox-select {
+            position: relative;
+            width: inherit;
+            height: 42px;
+            .countryCode{
+                margin-bottom: 0;
+                  .block-main {
+                  float: left;
+                  width: 90px !important;
+                  height: 42px;
+                  line-height: 42px;
+                  text-align: center;
+                  border: 0 !important;
+                  } 
+              }  
+              .aside-phone {
+                display: block;
+                float: right;
+                width: 242px;
+                height: 40px;
+                border: 0 !important;
+              }
+          }
+  
+          .identifyInput{
+              width: 180px;
+              float: left;
+          }
+          .identifyCode{
+              float: left;
+              margin-left: 20px;
+          }
+          .small {
+            width: inherit;
+            height: 20px;
+            font-size: 14px;
+            color: #666666;
+            text-align: start;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            z-index: -1;
+  
+            i {
+              margin: -1px 5px 0 0;
+              overflow: hidden;
+              display: inline-block;
+              vertical-align: middle;
+              color: #f66;
+              font-size: 14px;
+            }
+  
+            .errorPrompt {
+              vertical-align: middle;
+              color: #f66;
+            }
+          }
+  
+          .btn {
+            width: inherit;
+            height: 42px;
+            color: #fff;
+            background-color: #ff6700;
+            border: 1px solid rgba(186, 186, 186, .3);
+            margin-top: 15px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: -1;
+          }
+        }
+  
+        .privacy_box {
+          width: inherit;
+          color: #9d9d9d;
+          padding-top: 40px;
+          text-align: center;
+  
+          p {
+            width: inherit;
+            height: 41px;
+            padding: 10px 0;
+            cursor: pointer;
+  
+            a {
+              color: #333;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  
+  
+    .layout-bottom {
+      position: relative;
+      width: inherit;
+      height: 80px;
+      margin-top: 20px;
+      background: #f9f9f9;
+      z-index: 4;
+  
+      ul {
+        width: inherit;
+        height: 21px;
+        text-align: center;
+  
+        li {
+          display: inline-block;
+          height: 21px;
+          line-height: 21px;
+  
+          a {
+            height: 14px;
+            line-height: 14px;
+            padding: 0 10px;
+            color: #9d9d9d;
+            font-size: 14px;
+  
+            &.font-type {
+              color: #333 !important;
+            }
+  
+            &.privacy {
+              border-right: none !important;
+            }
+          }
+  
+          a:hover {
+            cursor: pointer;
+            color: #333;
+          }
+  
+          i {
+            color: #757575;
+            font-size: 10px;
+          }
+  
+        }
+      }
+  
+      p {
+        width: inherit;
+        height: 46px;
+        font-size: 14px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 0;
+        color: #757575;
+      }
+    }
+  }

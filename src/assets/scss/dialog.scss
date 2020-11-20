@@ -1,0 +1,32 @@
+.el-dialog{
+    width: 800px;
+    height: 500px;
+    margin-top: 5vh !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px 0 0 20px;
+    margin:initial;
+    text-align: start !important;
+    font-size: 14px;
+
+
+    .floatRight{
+        text-align: right !important;
+        margin-bottom: 10px;
+    }
+    .el-dialog__body{
+        padding: 0 20px 30px 20px;
+    }
+    p{
+       text-indent:2em;
+       margin-bottom: 10px;
+    }
+    .font-weight{
+        font-weight: 600 !important;
+    }
+    .el-dialog__footer{
+        text-align: center !important;
+    }
+   
+}
