@@ -1,10 +1,10 @@
 <template>
-  <el-form class="login-type" :rules="rules" :model="ruleForm" ref="ruleForm" :visible.sync="isLogin">
-    <el-form-item class="account" prop="account">
+  <el-form class="login-type" status-icon :rules="rules" :model="ruleForm" ref="ruleForm" :visible.sync="isLogin">
+    <el-form-item class="account" prop="username">
       <el-input type="text"
              placeholder="邮箱/手机号码/小米ID"
-             name="account"
-             id="account" v-model="ruleForm.account">
+             name="username"
+             id="username" v-model="ruleForm.username">
     </el-input>
     </el-form-item>
     <el-form-item class="account last" prop="password">
@@ -50,7 +50,7 @@ export default {
   name: 'Account',
   data () {
     // <!--验证账号-->
-    const account = (rule, value, callback) => {
+    const username = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入账号'))
       } else {
@@ -64,11 +64,11 @@ export default {
     }
     return {
       ruleForm: {
-        account: '',
+        username: '',
         password: ''
       },
       rules: {
-        account: [
+        username: [
           { required: true, message: '请输入账号', trigger: 'blur' },
           //   {
           //     pattern: /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
@@ -80,7 +80,7 @@ export default {
           //     message: '请输入正确的11位手机号码',
           //     trigger: 'blur'
           //   },
-          { validator: account, trigger: 'blur' }
+          { validator: username, trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },

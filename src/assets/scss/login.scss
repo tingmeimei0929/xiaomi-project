@@ -300,6 +300,7 @@
   
   
             fieldset {
+              text-align: center;
               margin-top: 100px;
               border-top: 1px solid #e0e0e0;
               border-left: none;
@@ -324,6 +325,7 @@
                 height: 30px;
                 border-radius: 50%;
                 margin: 0 17px;
+                text-align: center;
   
                 i {
                   display: block;
@@ -367,12 +369,11 @@
       margin-top: 0;
       padding-top: 100px;
       z-index: 4;
+      text-align: center;
   
       ul {
         width: inherit;
         height: 21px;
-        text-align: center;
-  
         li {
           display: inline-block;
           height: 21px;

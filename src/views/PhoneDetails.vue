@@ -180,12 +180,12 @@ export default {
     }
   },
   methods: {
-    init () {
-      const price = document.getElementsByClassName('price-span')
-      if (this.price.value !== '') {
-        this.showOldPrice = true
-      }
-    }
+    // init () {
+    //   const price = document.getElementsByClassName('price-span')
+    //   if (this.price.value !== '') {
+    //     this.showOldPrice = true
+    //   }
+    // }
   }
 }
 </script>

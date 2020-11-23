@@ -156,7 +156,7 @@
                                 <li><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/86567ac179a32fa9af05f89a45e57cbe.jpg?thumb=1&w=468&h=600&f=webp&q=90"></li>
                             </ul>
                             <div class="box-main">
-                                <router-view></router-view>
+                                <router-view :key="$route.fullPath"></router-view>
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                                 <li v-for="(item,index) in videoList" :key="index">
                                     <div class="video-img">
                                         <img v-lazy="item.imgSrc">
-                                        <button @click="dialogVisible = true"><i class="icon iconfont el-icon-caret-right"></i></button>
+                                        <button @click="dialogVisible = true"><i class=" el-icon-caret-right"></i></button>
                                     </div>
                                     <h3 class="video-title">{{ item.title }}</h3>
                                     <p class="video-desc">{{ item.desc }}</p>

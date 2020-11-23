@@ -459,14 +459,14 @@ export default {
       this.makeCode(this.identifyCodes, 5)
     },
     // 生成四位随机验证码
-    makeCode (o, l) {
-      for (let i = 0; i < l; i++) {
-        this.identifyCode += this.identifyCodes[
-          this.randomNum(0, this.identifyCodes.length)
-        ]
-      }
-      console.log(this.identifyCode)
-    },
+    // makeCode (o, l) {
+    //   for (let i = 0; i < l; i++) {
+    //     this.identifyCode += this.identifyCodes[
+    //       this.randomNum(0, this.identifyCodes.length)
+    //     ]
+    //   }
+    //   console.log(this.identifyCode)
+    // },
     // <!--提交登录-->
     //  submitForm() {
     //      this.$refs.ruleForm.validator(valid => {

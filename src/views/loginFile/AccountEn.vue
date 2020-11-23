@@ -54,13 +54,13 @@ export default {
   name: 'AccountEn',
   data () {
     // <!--验证账号-->
-    const account = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('Enter your email address or phone number'))
-      } else {
-        callback()
-      }
-    }
+    // const account = (rule, value, callback) => {
+    //   if (value === '') {
+    //     callback(new Error('Enter your email address or phone number'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
     // <!--验证密码-->
     const validatePass = (rule, value, callback) => {
       if (value === '') {
@@ -75,13 +75,13 @@ export default {
         password: ''
       },
       rules: {
-        account: [
-          { required: true, message: 'Enter your email address or phone number', trigger: 'blur' },
-          {
-            pattern: /^(?!(\d+)$)[a-zA-Z\d_]{4,20}$/,
-            message: '账号长度4-20，可包括数字、字母、下划线',
-            trigger: 'blur'
-          }
+        // account: [
+        //   { required: true, message: 'Enter your email address or phone number', trigger: 'blur' },
+        //   {
+        //     pattern: /^(?!(\d+)$)[a-zA-Z\d_]{4,20}$/,
+        //     message: '账号长度4-20，可包括数字、字母、下划线',
+        //     trigger: 'blur'
+        //   }
         //   {
         //     pattern: /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
         //     message: '请输入有效的邮箱账号',
@@ -93,7 +93,7 @@ export default {
         //     trigger: 'blur'
         //   },
         //   { validator: account, trigger: 'blur' }
-        ],
+        // ],
         password: [
           { required: true, message: 'Enter your password', trigger: 'blur' },
           {

@@ -54,13 +54,13 @@ export default {
   name: 'AccountFan',
   data () {
     // <!--验证账号-->
-    const account = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('請輸入帳號名'))
-      } else {
-        callback()
-      }
-    }
+    // const account = (rule, value, callback) => {
+    //   if (value === '') {
+    //     callback(new Error('請輸入帳號名'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
     // <!--验证密码-->
     const validatePass = (rule, value, callback) => {
       if (value === '') {

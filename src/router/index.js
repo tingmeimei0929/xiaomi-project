@@ -121,515 +121,515 @@ import Lost2 from '../views/manual/accountSecurity/Lost2.vue'
 
 Vue.use(VueRouter)
 
-const routes = [{
-  path: '/',
-  name: 'Main',
-  component: Main,
-  children: [
-    {
-      path: '/',
-      redirect: 'Popular'
-    },
-    {
-      path: 'Popular',
-      name: 'Popular',
-      component: Popular
-    },
-    {
-      path: 'Video',
-      name: 'Video',
-      component: Video
-    }
-  ]
-},
-{
-  path: '/Details',
-  name: '/Details',
-  component: Details
-},
-{
-  path: '/PhoneDetails',
-  name: '/PhoneDetails',
-  component: PhoneDetails
-},
-// 登录
-{
-  path: '/Login',
-  name: 'Login',
-  component: Login,
-  children: [{
+const routes = [
+  {
     path: '/',
-    redirect: 'Account'
+    name: 'Main',
+    component: Main,
+    children: [
+      {
+        path: 'Popular',
+        name: 'Popular',
+        component: Popular
+      },
+      {
+        path: 'Video',
+        name: 'Video',
+        component: Video
+      }
+    ]
   },
   {
-    path: 'Account',
-    name: 'Account',
-    component: Account
+    path: '/Details',
+    name: '/Details',
+    component: Details
   },
   {
-    path: 'SMS',
-    name: 'SMS',
-    component: SMS
+    path: '/PhoneDetails',
+    name: '/PhoneDetails',
+    component: PhoneDetails
+  },
+  // 登录
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login,
+    children: [
+      {
+        path: 'Account',
+        name: 'Account',
+        component: Account
+      },
+      {
+        path: 'SMS',
+        name: 'SMS',
+        component: SMS
+      },
+      {
+        path: 'Qr',
+        name: 'Qr',
+        component: Qr
+      }
+    ]
   },
   {
-    path: 'Qr',
-    name: 'Qr',
-    component: Qr
-  }
-  ]
-},
-{
-  path: '/LoginFan',
-  name: 'LoginFan',
-  component: LoginFan,
-  children: [{
-    path: '/',
-    redirect: 'AccountFan'
+    path: '/LoginFan',
+    name: 'LoginFan',
+    component: LoginFan,
+    children: [
+      {
+        path: '/',
+        redirect: 'AccountFan'
+      },
+      {
+        path: 'QrFan',
+        name: 'QrFan',
+        component: QrFan
+      },
+      {
+        path: 'AccountFan',
+        name: 'AccountFan',
+        component: AccountFan
+      },
+      {
+        path: 'SMSFan',
+        name: 'SMSFan',
+        component: SMSFan
+      }
+    ]
   },
   {
-    path: 'QrFan',
-    name: 'QrFan',
-    component: QrFan
+    path: '/LoginEn',
+    name: 'LoginEn',
+    component: LoginEn,
+    children: [
+      {
+        path: '/',
+        redirect: 'AccountEn'
+      },
+      {
+        path: 'QrEn',
+        name: 'QrEn',
+        component: QrEn
+      },
+      {
+        path: 'AccountEn',
+        name: 'AccountEn',
+        component: AccountEn
+      },
+      {
+        path: 'SMSEn',
+        name: 'SMSEn',
+        component: SMSEn
+      }
+    ]
+  },
+  // 注册
+  {
+    path: '/Registered',
+    name: 'Registered',
+    component: Registered
   },
   {
-    path: 'AccountFan',
-    name: 'AccountFan',
-    component: AccountFan
+    path: '/RegisteredEn',
+    name: 'RegisteredEn',
+    component: RegisteredEn
   },
   {
-    path: 'SMSFan',
-    name: 'SMSFan',
-    component: SMSFan
-  }
-  ]
-},
-{
-  path: '/LoginEn',
-  name: 'LoginEn',
-  component: LoginEn,
-  children: [{
-    path: '/',
-    redirect: 'AccountEn'
+    path: '/RegisteredFan',
+    name: 'RegisteredFan',
+    component: RegisteredFan
+  },
+  // 忘记密码
+  {
+    path: '/Forget',
+    name: 'Forget',
+    component: Forget
   },
   {
-    path: 'QrEn',
-    name: 'QrEn',
-    component: QrEn
+    path: '/ForgetFan',
+    name: 'ForgetFan',
+    component: ForgetFan
   },
   {
-    path: 'AccountEn',
-    name: 'AccountEn',
-    component: AccountEn
+    path: '/ForgetEn',
+    name: 'ForgetEn',
+    component: ForgetEn
+  },
+  // 常用规则
+  {
+    path: '/CodeRules',
+    name: 'CodeRules',
+    component: CodeRules,
+    children: [
+      // 简介
+      {
+        path: '/AccountName',
+        name: 'AccountName',
+        component: AccountName
+      },
+      // 新人指南 newcomer's Guide
+      // 注册
+      {
+        path: '/newcomerGuide/SignUp1',
+        name: 'SignUp1',
+        component: SignUp1
+      },
+      {
+        path: '/SignUp2',
+        name: 'SignUp2',
+        component: SignUp2
+      },
+      {
+        path: '/SignUp3',
+        name: 'SignUp3',
+        component: SignUp3
+      },
+      {
+        path: '/SignUp4',
+        name: 'SignUp4',
+        component: SignUp4
+      },
+      {
+        path: '/SignUp5',
+        name: 'SignUp5',
+        component: SignUp5
+      },
+      {
+        path: '/SignUp6',
+        name: 'SignUp6',
+        component: SignUp6
+      },
+      {
+        path: '/SignUp7',
+        name: 'SignUp7',
+        component: SignUp7
+      },
+      // 登录
+      {
+        path: '/LoginRules1',
+        name: 'LoginRules1',
+        component: LoginRules1
+      },
+      {
+        path: '/LoginRules2',
+        name: 'LoginRules2',
+        component: LoginRules2
+      },
+      {
+        path: '/LoginRules3',
+        name: 'LoginRules3',
+        component: LoginRules3
+      },
+      {
+        path: '/LoginRules4',
+        name: 'LoginRules4',
+        component: LoginRules4
+      },
+      {
+        path: '/LoginRules5',
+        name: 'LoginRules5',
+        component: LoginRules5
+      },
+      //   退出登录
+      {
+        path: '/QuitRules',
+        name: 'QuitRules',
+        component: QuitRules
+      },
+      // 注销
+      {
+        path: '/Logout1',
+        name: 'Logout1',
+        component: Logout1
+      },
+      {
+        path: '/Logout2',
+        name: 'Logout2',
+        component: Logout2
+      },
+      {
+        path: '/Logout3',
+        name: 'Logout3',
+        component: Logout3
+      },
+      // 申诉
+      {
+        path: '/Appeal1',
+        name: 'Appeal1',
+        component: Appeal1
+      },
+      {
+        path: '/Appeal2',
+        name: 'Appeal2',
+        component: Appeal2
+      },
+      {
+        path: '/Appeal3',
+        name: 'Appeal3',
+        component: Appeal3
+      },
+      {
+        path: '/Appeal4',
+        name: 'Appeal4',
+        component: Appeal4
+      },
+      {
+        path: '/Appeal5',
+        name: 'Appeal5',
+        component: Appeal5
+      },
+      {
+        path: '/Appeal6',
+        name: 'Appeal6',
+        component: Appeal6
+      },
+      {
+        path: '/Appeal7',
+        name: 'Appeal7',
+        component: Appeal7
+      },
+      {
+        path: '/Appeal8',
+        name: 'Appeal8',
+        component: Appeal8
+      },
+      {
+        path: '/Appeal9',
+        name: 'Appeal9',
+        component: Appeal9
+      },
+      // 常见问题 common problem
+      // 密码
+      {
+        path: '/PasswordRules1',
+        name: 'PasswordRules1',
+        component: PasswordRules1
+      },
+      {
+        path: '/PasswordRules2',
+        name: 'PasswordRules2',
+        component: PasswordRules2
+      },
+      {
+        path: '/PasswordRules3',
+        name: 'PasswordRules3',
+        component: PasswordRules3
+      },
+      // 短信和邮箱验证码
+      {
+        path: '/SmsQuestion1',
+        name: '/SmsQuestion1',
+        component: SmsQuestion1
+      },
+      {
+        path: '/SmsQuestion2',
+        name: '/SmsQuestion2',
+        component: SmsQuestion2
+      },
+      {
+        path: '/SmsQuestion3',
+        name: '/SmsQuestion3',
+        component: SmsQuestion3
+      },
+      {
+        path: '/SmsQuestion4',
+        name: '/SmsQuestion4',
+        component: SmsQuestion4
+      },
+      {
+        path: '/SmsQuestion5',
+        name: '/SmsQuestion5',
+        component: SmsQuestion5
+      },
+      // 绑定解绑第三方账号
+      {
+        path: '/ThirdParty1',
+        name: '/ThirdParty1',
+        component: ThirdParty1
+      },
+      {
+        path: '/ThirdParty2',
+        name: '/ThirdParty2',
+        component: ThirdParty2
+      },
+      {
+        path: '/ThirdParty3',
+        name: '/ThirdParty3',
+        component: ThirdParty3
+      },
+      // 账号安全 account security
+      // 安全手机有邮箱
+      {
+        path: '/SecurePhone1',
+        name: '/SecurePhone1',
+        component: SecurePhone1
+      },
+      {
+        path: '/SecurePhone2',
+        name: '/SecurePhone2',
+        component: SecurePhone2
+      },
+      {
+        path: '/SecurePhone3',
+        name: '/SecurePhone3',
+        component: SecurePhone3
+      },
+      {
+        path: '/SecurePhone4',
+        name: '/SecurePhone4',
+        component: SecurePhone4
+      },
+      {
+        path: '/SecurePhone5',
+        name: '/SecurePhone5',
+        component: SecurePhone5
+      },
+      {
+        path: '/SecurePhone6',
+        name: '/SecurePhone6',
+        component: SecurePhone6
+      },
+      {
+        path: '/SecurePhone7',
+        name: '/SecurePhone7',
+        component: SecurePhone7
+      },
+      {
+        path: '/SecurePhone8',
+        name: '/SecurePhone8',
+        component: SecurePhone8
+      },
+      {
+        path: '/SecurePhone9',
+        name: '/SecurePhone9',
+        component: SecurePhone9
+      },
+      // 密保问题
+      {
+        path: '/SecurityQuestion1',
+        name: '/SecurityQuestion1',
+        component: SecurityQuestion1
+      },
+      {
+        path: '/SecurityQuestion2',
+        name: '/SecurityQuestion2',
+        component: SecurityQuestion2
+      },
+      {
+        path: '/SecurityQuestion3',
+        name: '/SecurityQuestion3',
+        component: SecurityQuestion3
+      },
+      // 丢失被盗或换机
+      {
+        path: '/Lost1',
+        name: '/Lost1',
+        component: Lost1
+      },
+      {
+        path: '/Lost2',
+        name: '/Lost2',
+        component: Lost2
+      }
+    ]
+  },
+  // 小米秒杀
+  {
+    path: '/Homepage',
+    name: 'Homepage',
+    component: Homepage,
+    children: [
+      {
+        path: '/',
+        redirect: 'Spike1'
+      },
+      {
+        path: 'Spike1',
+        name: 'Spike1',
+        component: Spike1
+      },
+      {
+        path: 'Spike2',
+        name: 'Spike2',
+        component: Spike2
+      },
+      {
+        path: 'Spike3',
+        name: 'Spike3',
+        component: Spike3
+      },
+      {
+        path: 'Spike4',
+        name: 'Spike4',
+        component: Spike4
+      }
+    ]
+  },
+  // 企业团购
+  {
+    path: '/Company',
+    name: 'Company',
+    component: Company,
+    children: [
+      {
+        path: '/',
+        redirect: 'NewList'
+      },
+      {
+        path: 'NewList',
+        name: 'NewList',
+        component: NewList
+      },
+      {
+        path: 'newProduct',
+        name: 'newProduct',
+        component: newProduct
+      },
+      {
+        path: 'newPhone',
+        name: 'newPhone',
+        component: newPhone
+      },
+      {
+        path: 'newBook',
+        name: 'newBook',
+        component: newBook
+      },
+      {
+        path: 'newAppliances',
+        name: 'newAppliances',
+        component: newAppliances
+      },
+      {
+        path: 'newRouter',
+        name: 'newRouter',
+        component: newRouter
+      },
+      {
+        path: 'newHeadset',
+        name: 'newHeadset',
+        component: newHeadset
+      },
+      {
+        path: 'newLife',
+        name: 'newLife',
+        component: newLife
+      },
+      {
+        path: 'newAccessories',
+        name: 'newAccessories',
+        component: newAccessories
+      }
+    ]
   },
   {
-    path: 'SMSEn',
-    name: 'SMSEn',
-    component: SMSEn
-  }
-  ]
-},
-{
-  path: '/Registered',
-  name: 'Registered',
-  component: Registered
-},
-{
-  path: '/RegisteredEn',
-  name: 'RegisteredEn',
-  component: RegisteredEn
-},
-{
-  path: '/RegisteredFan',
-  name: 'RegisteredFan',
-  component: RegisteredFan
-},
-{
-  path: '/Forget',
-  name: 'Forget',
-  component: Forget
-},
-{
-  path: '/ForgetFan',
-  name: 'ForgetFan',
-  component: ForgetFan
-},
-{
-  path: '/ForgetEn',
-  name: 'ForgetEn',
-  component: ForgetEn
-},
-{
-  path: '/CodeRules',
-  name: 'CodeRules',
-  component: CodeRules,
-  children: [
-    // 简介
-    {
-      path: '/AccountName',
-      name: 'AccountName',
-      component: AccountName
-    },
-    // 新人指南 newcomer's Guide
-    // 注册
-    {
-      path: '/newcomerGuide/SignUp1',
-      name: 'SignUp1',
-      component: SignUp1
-    },
-    {
-      path: '/SignUp2',
-      name: 'SignUp2',
-      component: SignUp2
-    },
-    {
-      path: '/SignUp3',
-      name: 'SignUp3',
-      component: SignUp3
-    },
-    {
-      path: '/SignUp4',
-      name: 'SignUp4',
-      component: SignUp4
-    },
-    {
-      path: '/SignUp5',
-      name: 'SignUp5',
-      component: SignUp5
-    },
-    {
-      path: '/SignUp6',
-      name: 'SignUp6',
-      component: SignUp6
-    },
-    {
-      path: '/SignUp7',
-      name: 'SignUp7',
-      component: SignUp7
-    },
-    // 登录
-    {
-      path: '/LoginRules1',
-      name: 'LoginRules1',
-      component: LoginRules1
-    },
-    {
-      path: '/LoginRules2',
-      name: 'LoginRules2',
-      component: LoginRules2
-    },
-    {
-      path: '/LoginRules3',
-      name: 'LoginRules3',
-      component: LoginRules3
-    },
-    {
-      path: '/LoginRules4',
-      name: 'LoginRules4',
-      component: LoginRules4
-    },
-    {
-      path: '/LoginRules5',
-      name: 'LoginRules5',
-      component: LoginRules5
-    },
-    //   退出登录
-    {
-      path: '/QuitRules',
-      name: 'QuitRules',
-      component: QuitRules
-    },
-    // 注销
-    {
-      path: '/Logout1',
-      name: 'Logout1',
-      component: Logout1
-    },
-    {
-      path: '/Logout2',
-      name: 'Logout2',
-      component: Logout2
-    },
-    {
-      path: '/Logout3',
-      name: 'Logout3',
-      component: Logout3
-    },
-    // 申诉
-    {
-      path: '/Appeal1',
-      name: 'Appeal1',
-      component: Appeal1
-    },
-    {
-      path: '/Appeal2',
-      name: 'Appeal2',
-      component: Appeal2
-    },
-    {
-      path: '/Appeal3',
-      name: 'Appeal3',
-      component: Appeal3
-    },
-    {
-      path: '/Appeal4',
-      name: 'Appeal4',
-      component: Appeal4
-    },
-    {
-      path: '/Appeal5',
-      name: 'Appeal5',
-      component: Appeal5
-    },
-    {
-      path: '/Appeal6',
-      name: 'Appeal6',
-      component: Appeal6
-    },
-    {
-      path: '/Appeal7',
-      name: 'Appeal7',
-      component: Appeal7
-    },
-    {
-      path: '/Appeal8',
-      name: 'Appeal8',
-      component: Appeal8
-    },
-    {
-      path: '/Appeal9',
-      name: 'Appeal9',
-      component: Appeal9
-    },
-    // 常见问题 common problem
-    // 密码
-    {
-      path: '/PasswordRules1',
-      name: 'PasswordRules1',
-      component: PasswordRules1
-    },
-    {
-      path: '/PasswordRules2',
-      name: 'PasswordRules2',
-      component: PasswordRules2
-    },
-    {
-      path: '/PasswordRules3',
-      name: 'PasswordRules3',
-      component: PasswordRules3
-    },
-    // 短信和邮箱验证码
-    {
-      path: '/SmsQuestion1',
-      name: '/SmsQuestion1',
-      component: SmsQuestion1
-    },
-    {
-      path: '/SmsQuestion2',
-      name: '/SmsQuestion2',
-      component: SmsQuestion2
-    },
-    {
-      path: '/SmsQuestion3',
-      name: '/SmsQuestion3',
-      component: SmsQuestion3
-    },
-    {
-      path: '/SmsQuestion4',
-      name: '/SmsQuestion4',
-      component: SmsQuestion4
-    },
-    {
-      path: '/SmsQuestion5',
-      name: '/SmsQuestion5',
-      component: SmsQuestion5
-    },
-    // 绑定解绑第三方账号
-    {
-      path: '/ThirdParty1',
-      name: '/ThirdParty1',
-      component: ThirdParty1
-    },
-    {
-      path: '/ThirdParty2',
-      name: '/ThirdParty2',
-      component: ThirdParty2
-    },
-    {
-      path: '/ThirdParty3',
-      name: '/ThirdParty3',
-      component: ThirdParty3
-    },
-    // 账号安全 account security
-    // 安全手机有邮箱
-    {
-      path: '/SecurePhone1',
-      name: '/SecurePhone1',
-      component: SecurePhone1
-    },
-    {
-      path: '/SecurePhone2',
-      name: '/SecurePhone2',
-      component: SecurePhone2
-    },
-    {
-      path: '/SecurePhone3',
-      name: '/SecurePhone3',
-      component: SecurePhone3
-    },
-    {
-      path: '/SecurePhone4',
-      name: '/SecurePhone4',
-      component: SecurePhone4
-    },
-    {
-      path: '/SecurePhone5',
-      name: '/SecurePhone5',
-      component: SecurePhone5
-    },
-    {
-      path: '/SecurePhone6',
-      name: '/SecurePhone6',
-      component: SecurePhone6
-    },
-    {
-      path: '/SecurePhone7',
-      name: '/SecurePhone7',
-      component: SecurePhone7
-    },
-    {
-      path: '/SecurePhone8',
-      name: '/SecurePhone8',
-      component: SecurePhone8
-    },
-    {
-      path: '/SecurePhone9',
-      name: '/SecurePhone9',
-      component: SecurePhone9
-    },
-    // 密保问题
-    {
-      path: '/SecurityQuestion1',
-      name: '/SecurityQuestion1',
-      component: SecurityQuestion1
-    },
-    {
-      path: '/SecurityQuestion2',
-      name: '/SecurityQuestion2',
-      component: SecurityQuestion2
-    },
-    {
-      path: '/SecurityQuestion3',
-      name: '/SecurityQuestion3',
-      component: SecurityQuestion3
-    },
-    // 丢失被盗或换机
-    {
-      path: '/Lost1',
-      name: '/Lost1',
-      component: Lost1
-    },
-    {
-      path: '/Lost2',
-      name: '/Lost2',
-      component: Lost2
-    }
-  ]
-},
-// 小米秒杀
-{
-  path: '/Homepage',
-  name: 'Homepage',
-  component: Homepage,
-  children: [{
-    path: '/',
-    redirect: 'Spike1'
-  },
-  {
-    path: 'Spike1',
-    name: 'Spike1',
-    component: Spike1
-  },
-  {
-    path: 'Spike2',
-    name: 'Spike2',
-    component: Spike2
-  },
-  {
-    path: 'Spike3',
-    name: 'Spike3',
-    component: Spike3
-  },
-  {
-    path: 'Spike4',
-    name: 'Spike4',
-    component: Spike4
-  }
-  ]
-},
-// 企业团购
-{
-  path: '/Company',
-  name: 'Company',
-  component: Company,
-  children: [
-    {
-      path: '/',
-      redirect: 'NewList'
-    },
-    {
-      path: 'NewList',
-      name: 'NewList',
-      component: NewList
-    },
-    {
-      path: 'newProduct',
-      name: 'newProduct',
-      component: newProduct
-    },
-    {
-      path: 'newPhone',
-      name: 'newPhone',
-      component: newPhone
-    },
-    {
-      path: 'newBook',
-      name: 'newBook',
-      component: newBook
-    },
-    {
-      path: 'newAppliances',
-      name: 'newAppliances',
-      component: newAppliances
-    },
-    {
-      path: 'newRouter',
-      name: 'newRouter',
-      component: newRouter
-    },
-    {
-      path: 'newHeadset',
-      name: 'newHeadset',
-      component: newHeadset
-    },
-    {
-      path: 'newLife',
-      name: 'newLife',
-      component: newLife
-    },
-    {
-      path: 'newAccessories',
-      name: 'newAccessories',
-      component: newAccessories
-    }
-  ]
-},
-{
-  path: '/Cart',
-  name: 'Cart',
-  component: Cart
-}
-]
+    path: '/Cart',
+    name: 'Cart',
+    component: Cart
+  }]
 const router = new VueRouter({
+  mode: "history",
   routes
 })
 

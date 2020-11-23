@@ -10,7 +10,9 @@
             <ul class="topbar-info">
             <li v-if="username">{{ username }}</li>
             <!-- @click="dialogVisible = true"  -->
-            <li v-on:click="login" v-if="!username">登录 <span class="sep">|</span></li>
+            <li v-if="!username">
+                <router-link to="/Login">登录 <span class="sep">|</span></router-link>
+            </li>
             <li @click="signUp" v-if="!username">注册 <span class="sep">|</span></li>
             <li>消息通知</li>
             <li v-if="username">我的订单</li>
@@ -81,19 +83,16 @@ export default {
     }
   },
   methods: {
-    login () {
-      this.$router.push({
-        path: '/Login'
-      })
-    },
     signUp () {
       this.$router.push({
-        path: '/Registered'
+        path: '/Registered',
+        name: 'Registered'
       })
     },
     cart () {
       this.$router.push({
-        path: '/Cart'
+        path: '/Cart',
+        name: 'Cart'
       })
     },
     getProuductList () {

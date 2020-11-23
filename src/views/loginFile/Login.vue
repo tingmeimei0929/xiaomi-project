@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    </router-view>
     <div class="top">
       <a href="https://www.mi.com/index.html"
          class="logo"></a>
@@ -38,6 +39,9 @@ export default {
     return {
 
     }
+  },
+  mounted: function() {
+    console.log("hhhhhh")
   },
   methods: {
     complex () {

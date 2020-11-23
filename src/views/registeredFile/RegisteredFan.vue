@@ -111,8 +111,8 @@ export default {
       }
     },
     register () {
-      const errorPrompt = this.errorMsg
-      const inputResult = this.inputArea
+    //   const errorPrompt = this.errorMsg
+    //   const inputResult = this.inputArea
       if (this.inputResult === '') {
         this.prompt = true
       } else if (!/^((1[3,5,8,7,9][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/.test(this.inputResult)) {
