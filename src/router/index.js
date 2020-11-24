@@ -128,6 +128,10 @@ const routes = [
     component: Main,
     children: [
       {
+        path: '/',
+        redirect: 'Popular'
+      },
+      {
         path: 'Popular',
         name: 'Popular',
         component: Popular
@@ -155,6 +159,10 @@ const routes = [
     name: 'Login',
     component: Login,
     children: [
+      {
+        path: '/',
+        redirect: 'Account'
+      },
       {
         path: 'Account',
         name: 'Account',

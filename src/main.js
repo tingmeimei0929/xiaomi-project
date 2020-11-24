@@ -12,8 +12,7 @@ import VueLazyLoad from 'vue-lazyload'
 import $ from 'jquery'
 import './assets/iconfont/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
-import './assets/swiper/css/swiper.css'
-import './assets/swiper/css/swiper.min.css'
+import 'swiper/swiper-bundle.css'
 import './assets/scss/common.scss'
 import './assets/scss/footer.scss'
 import './assets/scss/header.scss'
@@ -31,6 +30,7 @@ import './assets/scss/codeRules.scss'
 import './assets/scss/details.scss'
 import './assets/scss/dialog.scss'
 
+Vue.prototype.$axios = axios
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueAxios, axios)

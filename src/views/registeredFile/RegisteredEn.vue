@@ -8,9 +8,9 @@
       <h4 class="layout-title">注册小米账号</h4>
       <el-form class="layout-table" :model="ruleForm" :rules="rules" ref="ruleForm">
         <div class="regbox">
-            <h4 class="regbox-title">Country/Region</h4>
+            <h4 class="regbox-title">国家/地区</h4>
             <el-form-item prop="country" >
-                <el-select v-model="ruleForm.country"  placeholder="China"  class="regbox-select">
+                <el-select v-model="ruleForm.country"  placeholder="中国"  class="regbox-select">
                     <el-option-group v-for="group in countryOptions"
                                 :key="group.label"
                                 :label="group.label"
@@ -22,11 +22,10 @@
                                 style="padding: 0 10px;line-height: 39px;clear: both;overflow: hidden;color: #000;border-bottom: 1px solid #e0e0e0;cursor:pointer">
                         </el-option>
                     </el-option-group>
-                    <!-- <span><i class="el-icon-arrow-down"></i></span> -->
                 </el-select>
             </el-form-item>
-            <div class="small">You won't be able to change your region after you create your account.</div>
-            <h4 class="regbox-title">Mobile number</h4>
+            <div class="small">成功注册账号后，国家/地区将不能被修改</div>
+            <h4 class="regbox-title">手机号码</h4>
             <div class="regbox-select" >
                 <el-form-item prop="countryCode" class="countryCode">
                     <el-select class="block-main" v-model="ruleForm.countryCode">
@@ -51,10 +50,21 @@
                     </el-input>
                 </el-form-item>
             </div>
-            <el-button class="btn" @click="submitForm('ruleForm')">Create Mi Account</el-button>
+            <h4 class="regbox-title">图形验证码</h4>
+            <el-form-item prop="verifyCode" >
+                <el-input placeholder="图片验证码"
+                          type="text"
+                          v-model="ruleForm.verifyCode"
+                          class="identifyInput">
+                </el-input>
+                <div @click="refreshCode" class="identifyCode">
+                    <s-identify :identifyCode="identifyCode"></s-identify>
+                </div>
+            </el-form-item>
+            <el-button class="btn" @click="submitForm('ruleForm')">立即注册</el-button>
         </div>
         <div class="privacy_box">
-          <p>I've read and agreed to Xiaomi's <a>User Agreement</a>and<a>Privacy Policy</a></p>
+            <p>I've read and agreed to Xiaomi's <a>User Agreement</a>and<a>Privacy Policy</a></p>
         </div>
       </el-form>
     </div>
@@ -73,18 +83,18 @@
 <script>
 import SIdentify from '../../components/SIdentify'
 export default {
-  name: 'Registered',
+  name: 'RegisteredEn',
   data () {
     // <!--验证手机号是否合法-->
     const checkTel = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('Enter phone number '))
+        callback(new Error('请输入手机号码'))
       } else {
         const reg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/
         if (reg.test(value)) {
           callback()
         } else {
-          callback(new Error('The phone number you entered is invalid.'))
+          callback(new Error('请输入正确的11位手机号码'))
         }
       }
     }
@@ -449,14 +459,14 @@ export default {
       this.makeCode(this.identifyCodes, 5)
     },
     // 生成四位随机验证码
-    // makeCode (o, l) {
-    //   for (let i = 0; i < l; i++) {
-    //     this.identifyCode = this.identifyCode + this.identifyCodes[
-    //       this.randomNum(0, this.identifyCodes.length)
-    //     ]
-    //   }
-    //   console.log(this.identifyCode)
-    // },
+    makeCode (o, l) {
+      for (let i = 0; i < l; i++) {
+        this.identifyCode += this.identifyCodes[
+          this.randomNum(0, this.identifyCodes.length)
+        ]
+      }
+      console.log(this.identifyCode)
+    },
     // <!--提交登录-->
     //  submitForm() {
     //      this.$refs.ruleForm.validator(valid => {
@@ -498,10 +508,5 @@ export default {
 }
 .countryCode{
     float: left;
-}
-</style>
-<style>
-.el-input__suffix{
-    top: -20px !important;
 }
 </style>

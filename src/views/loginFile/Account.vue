@@ -1,5 +1,5 @@
 <template>
-  <el-form class="login-type" status-icon :rules="rules" :model="ruleForm" ref="ruleForm" :visible.sync="isLogin">
+  <el-form class="login-type" status-icon :rules="rules" :model="ruleForm" ref="ruleForm">
     <el-form-item class="account" prop="username">
       <el-input type="text"
              placeholder="邮箱/手机号码/小米ID"
@@ -63,6 +63,7 @@ export default {
       }
     }
     return {
+      tishi: '',
       ruleForm: {
         username: '',
         password: ''
@@ -94,72 +95,39 @@ export default {
     }
   },
   computed: {
-    //   获取vuex重的showLogin，控制登录组件是否显示
-    isLogin: {
-      get () {
-        return this.$store.getters.getShowLogin
-      },
-      set (val) {
-        this.$refs.ruleForm.resetFields()
-        this.setShowLogin(val)
-      }
-    }
+
   },
   methods: {
     ...mapActions(['setUser', 'setShowLogin']),
-    // <!--提交登录-->
     submitForm () {
       // 通过element自定义表单校验规则，校验用户输入的用户信息
       this.$refs.ruleForm.validate(valid => {
         //   如果通过校验开始登录
         if (valid) {
-          setTimeout(() => {
-            this.$message({
-              message: '登录成功！',
-              type: 'success'
+          this.axios.post('/api/wddjnn/user//login', {
+            userName: this.ruleForm.username,
+            password: this.ruleForm.password
+          }).then(res => {
+            if (res.data.code === 200 && res.data.result === true) {
+              // 登录信息存到本地
+              let user = JSON.stringify(res.data.userName)
+              console.log(user)
+              // 登录信息存到vuex
+              this.setUser(res.data.user)
+              alert('登录成功')
+              this.$router.push({ path: "/" });
+            } else {
+              // 清空输入框的校验状态
+              this.$refs['ruleForm'].resetFields()
+              alert('登录失败')
+            }
+          })
+            .catch(function (error) {
+              console.log(error)
             })
-          }, 400)
-        } else {
-          console.log('error submit!!')
-          return false
         }
       })
-    /*
-     有后端
-     this.$refs.ruleForm.validate(valid => {
-        //  如果通过校验开始登录
-        if(valid) {
-            this.$axios.post('/api/xxx', {
-                userName: this.ruleForm.account,
-                password: this.ruleForm.password
-            }).then(res => {
-                // 001代表登录成功，其他的均为失败
-                if(res.data.code === '001) {
-                    // 隐藏登录组件
-                    this.isLogin = false;
-                    // 登录信息存到本地
-                    let user = JSON.stringify(res.data.user)
-                    localStorage.setItem('user', user)
-                    // 登录信息存到vuex
-                    this.setUser(res.data.user)
-                    // 弹出通知框提示登录成功信息
-                    this.notifySucceed(res.data.msg)
-                }else {
-                    // 清空输入框的校验状态
-                    this.$refs['ruleForm].resetFields()
-                    // 弹出通知框提示登录失败信息
-                    this.notifyError(res.data.msg)
-                }
-            }).catch(err => {
-                retrun Promise.reject(err)
-            })
-        }else {
-            retrun false
-        }
-     })
-    */
     },
-
     signup () {
       this.$router.push({
         path: '/Registered'
