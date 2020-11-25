@@ -1,214 +1,214 @@
 <template>
-    <div>
-        <navHeader></navHeader>
-        <main class="main">
-            <navBanner></navBanner>
-            <div class="container">
-                 <!-- 轮播图 -->
-                <div class="swiper-row">
-                    <swiper :options="swiperOption"
-                            ref="mySwiper"
-                            class="swiper-container">
-                        <swiper-slide v-for="(item,index) in swiperInfo"
-                                    :key="index"
-                                    :style="item.icon">
-                        <a :href="item.href"></a>
-                        </swiper-slide>
+  <div>
+    <navHeader></navHeader>
+    <main class="main">
+        <navBanner></navBanner>
+        <div class="container">
+            <!-- 轮播图 -->
+            <div class="swiper-row">
+                <swiper :options="swiperOption"
+                        ref="mySwiper"
+                        class="swiper-container">
+                    <swiper-slide v-for="(item,index) in swiperInfo"
+                                :key="index"
+                                :style="item.icon">
+                    <a :href="item.href"></a>
+                    </swiper-slide>
+                    <!-- 上一页 -->
+                    <div class="swiper-button-prev"
+                        slot="button-prev"></div>
+                    <!-- 下一页 -->
+                    <div class="swiper-button-next"
+                        slot="button-next"></div>
+                    <!-- 分页 -->
+                    <div class="swiper-pagination"
+                        slot="pagination"></div>
+                </swiper>
+                <!-- 左侧导航条 -->
+                <ul class="category-item">
+                    <li v-for="(item, index) in categoryList" :key='index'>
+                    <div class="main-menu"><a>{{ item.name }}<i class="el-icon-aliqianjinxiayige"></i></a></div>
+                    <div class="sub-menu" >
+                        <ul class="item-list" v-for="(num,index) in item.ulIndex" :key="index">
+                        <li v-for="(list,index) in num.children" :key="index">
+                            <a href="#">
+                            <img :src="list.imgSrc"
+                                alt="">
+                            <span class="text">{{ list.title }}</span>
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+            <!--小米秒杀分类 -->
+            <div class="home-row">
+                <div class="home-left">
+                    <ul class="home-ul .clearfix">
+                    <li @click="spikeBtn"><a href="#"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48">小米秒杀</a></li>
+                    <li class="li-after"
+                        @click="companyBtn"><a href="#"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48">企业团购</a></li>
+                    <li class="li-after"><a href="https://www.mi.com/order/fcode"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48">F码通道</a></li>
+                    </ul>
+                    <ul class="home-ul clearfix">
+                    <li><a href="https://www.mi.com/mimobile/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48">米粉卡</a></li>
+                    <li class="li-after"><a href="https://huanxin.mi.com/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48">以旧换新</a></li>
+                    <li class="li-after"><a href="https://recharge.10046.mi.com/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48">话费充值</a></li>
+                    </ul>
+                </div>
+                <ul class="home-right">
+                    <li><a href="http://www.mi.com/redminote8"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/35a2239e10e392af73b6b7a737a039d6.jpg?w=632&h=340"></a></li>
+                    <li><a href="https://item.mi.com/product/10000203.html?selected=10000203"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fbff319c7dd00e75c9758acf248d3784.jpg?w=632&h=340"></a></li>
+                    <li><a href="https://www.mi.com/shouhuan4/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340"></a></li>
+                </ul>
+            </div>
+            <!-- 主要内容 -->
+            <div class="cont">
+                <!-- 小米闪购 -->
+                <div class="flash-sale row">
+                    <div class="flash-title">
+                        <h2>小米闪购</h2>
                         <!-- 上一页 -->
-                        <div class="swiper-button-prev"
+                        <div class="swiper-button-prev btn"
                             slot="button-prev"></div>
                         <!-- 下一页 -->
-                        <div class="swiper-button-next"
+                        <div class="swiper-button-next btn"
                             slot="button-next"></div>
-                        <!-- 分页 -->
-                        <div class="swiper-pagination"
-                            slot="pagination"></div>
-                    </swiper>
-                    <!-- 左侧导航条 -->
-                    <ul class="category-item">
-                        <li v-for="(item, index) in categoryList" :key='index'>
-                        <div class="main-menu"><a>{{ item.name }}<i class="icon iconfont el-icon-aliqianjinxiayige"></i></a></div>
-                        <div class="sub-menu" >
-                            <ul class="item-list" v-for="(num,index) in item.ulIndex" :key="index">
-                            <li v-for="(list,index) in num.children" :key="index">
-                                <a href="#">
-                                <img :src="list.imgSrc"
-                                    alt="">
-                                <span class="text">{{ list.title }}</span>
-                                </a>
-                            </li>
-                            </ul>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
-                <!--小米秒杀分类 -->
-                <div class="home-row">
-                    <div class="home-left">
-                        <ul class="home-ul .clearfix">
-                        <li @click="spikeBtn"><a href="#"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48">小米秒杀</a></li>
-                        <li class="li-after"
-                            @click="companyBtn"><a href="#"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48">企业团购</a></li>
-                        <li class="li-after"><a href="https://www.mi.com/order/fcode"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48">F码通道</a></li>
-                        </ul>
-                        <ul class="home-ul clearfix">
-                        <li><a href="https://www.mi.com/mimobile/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48">米粉卡</a></li>
-                        <li class="li-after"><a href="https://huanxin.mi.com/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48">以旧换新</a></li>
-                        <li class="li-after"><a href="https://recharge.10046.mi.com/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48">话费充值</a></li>
-                        </ul>
                     </div>
-                    <ul class="home-right">
-                        <li><a href="http://www.mi.com/redminote8"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/35a2239e10e392af73b6b7a737a039d6.jpg?w=632&h=340"></a></li>
-                        <li><a href="https://item.mi.com/product/10000203.html?selected=10000203"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fbff319c7dd00e75c9758acf248d3784.jpg?w=632&h=340"></a></li>
-                        <li><a href="https://www.mi.com/shouhuan4/"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340"></a></li>
-                    </ul>
-                </div>
-                <!-- 主要内容 -->
-                <div class="cont">
-                    <!-- 小米闪购 -->
-                    <div class="flash-sale row">
-                        <div class="flash-title">
-                            <h2>小米闪购</h2>
-                            <!-- 上一页 -->
-                            <div class="swiper-button-prev btn"
-                                slot="button-prev"></div>
-                            <!-- 下一页 -->
-                            <div class="swiper-button-next btn"
-                                slot="button-next"></div>
-                        </div>
-                        <div class="flash-container">
-                            <div class="flash-timer">
-                                <h3>14:00场</h3>
-                                <img src="../assets/image/falsh.jpg">
-                                <h2 class="prompt">距离结束还有</h2>
-                                <div class="timer">
-                                <div class="timeruning">{{ hours }}</div>
-                                <div class="icon">:</div>
-                                <div class="timeruning">{{ minute }}</div>
-                                <div class="icon">:</div>
-                                <div class="timeruning">{{ seconds }}</div>
-                                </div>
-                            </div>
-                            <div class="flash-swiper">
-                                <swiper :options="swiperOption" ref="mySwiper" class="swiper-container">
-                                    <swiper-slide v-for="item in swiperList" :key="item">
-                                        <div v-for="(list,index) in item.children" :key="index">
-                                            <a class="carousel">
-                                                <div class="thumb">
-                                                    <img v-lazy="list.imgSrc" style="width:160px;height:160px;">
-                                                </div>
-                                                <h3 class="content-title">{{ list.title }}</h3>
-                                                <p class="desc">{{ list.desc }}</p>
-                                                <p class="price">{{ list.newPrice }}元<span>{{ list.oldPrice }}元</span></p>
-                                            </a>
-                                        </div>
-                                    </swiper-slide>
-                                </swiper>
+                    <div class="flash-container">
+                        <div class="flash-timer">
+                            <h3>14:00场</h3>
+                            <img src="../assets/image/falsh.jpg">
+                            <h2 class="prompt">距离结束还有</h2>
+                            <div class="timer">
+                            <div class="timeruning">{{ hours }}</div>
+                            <div class="icon">:</div>
+                            <div class="timeruning">{{ minute }}</div>
+                            <div class="icon">:</div>
+                            <div class="timeruning">{{ seconds }}</div>
                             </div>
                         </div>
-                    </div>
-                    <!-- 展示图-->
-                    <div class="home-banner row">
-                        <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3f2a7ec142ffc00b6f279549ebee0af7.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
-                    </div>
-                     <!-- 手机 -->
-                    <div class="home-brick row">
-                        <div class="brick-title">
-                            <h2>手机</h2>
-                            <div class="all"><span @click="seeMore">查看全部<i class="icon iconfont el-icon-aliqianjinxiayige"></i></span></div>
-                        </div>
-                        <div class="brick-box">
-                            <div class="box-minor">
-                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/574c6643ab91c6618bfb2d0e2c761d0b.jpg?thumb=1&w=468&h=1228&f=webp&q=90">
-                            </div>
-                            <div class="box-main">
-                                <ul class="box-list ">
-                                    <li v-for="(item,index) in phoneList" :key="index">
-                                        <a>
+                        <div class="flash-swiper">
+                            <swiper :options="swiperOption" ref="mySwiper" class="swiper-container">
+                                <swiper-slide v-for="item in swiperList" :key="item">
+                                    <div v-for="(list,index) in item.children" :key="index">
+                                        <a class="carousel">
                                             <div class="thumb">
-                                                <img v-lazy="item.imgSrc" style="width:160px;height:160px;">
+                                                <img v-lazy="list.imgSrc" style="width:160px;height:160px;">
                                             </div>
-                                            <h3 class="content-title">{{ item.title }}</h3>
-                                            <p class="desc">{{ item.desc }}</p>
-                                            <p class="price">{{ item.newPrice }}元起<span v-if="showPrice" class="oldPrice">{{ item.oldPrice }}元</span></p>
+                                            <h3 class="content-title">{{ list.title }}</h3>
+                                            <p class="desc">{{ list.desc }}</p>
+                                            <p class="price">{{ list.newPrice }}元<span>{{ list.oldPrice }}元</span></p>
                                         </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 展示图 -->
-                    <div class="home-banner row">
-                        <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
-                    </div>
-                    <!-- 家电 -->
-                    <div class="home-brick row">
-                        <div class="brick-title">
-                            <h2>家电</h2>
-                            <ul class="all">
-                                <router-link to="/Popular" class="all-li">热门</router-link>
-                                <router-link to="/Video" class="all-li">电视影音</router-link>
-                            </ul>
-                        </div>
-                        <div class="brick-box">
-                            <ul class="box-minor">
-                                <li><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f256b81e4233333692eece77ed06ebc2.jpg?thumb=1&w=468&h=600&f=webp&q=90"></li>
-                                <li><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/86567ac179a32fa9af05f89a45e57cbe.jpg?thumb=1&w=468&h=600&f=webp&q=90"></li>
-                            </ul>
-                            <div class="box-main">
-                                <router-view :key="$route.fullPath"></router-view>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 展示图 -->
-                    <div class="home-banner row">
-                        <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/59e8fc8ba9718c266882719fb4bbcedd.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
-                    </div>
-
-                    <!-- 视频 -->
-                    <div class="video-brick row ">
-                        <div class="video-title">
-                            <h2>视频</h2>
-                            <div class="all"><span href="#">查看全部<i class="icon iconfont el-icon-aliqianjinxiayige"></i></span></div>
-                        </div>
-                        <div class="video-box">
-                            <ul>
-                                <li v-for="(item,index) in videoList" :key="index">
-                                    <div class="video-img">
-                                        <img v-lazy="item.imgSrc">
-                                        <button @click="dialogVisible = true"><i class=" el-icon-caret-right"></i></button>
                                     </div>
-                                    <h3 class="video-title">{{ item.title }}</h3>
-                                    <p class="video-desc">{{ item.desc }}</p>
-
-                                    <el-dialog :visible.sync="dialogVisible"
-                                            :befor-close="handleClose"
-                                            :title="item.title">
-                                        <video-player   class="video-player vjs-custom-skin"
-                                                        ref="videoPlayer"
-                                                    :options="playerOptions"
-                                                    :playsinline="true"
-                                                    @play="onPlayerPlay($event)"
-                                                    @pause="onPlayerPause($event)">
-                                        </video-player>
-                                    </el-dialog>
+                                </swiper-slide>
+                            </swiper>
+                        </div>
+                    </div>
+                </div>
+                <!-- 展示图-->
+                <div class="home-banner row">
+                    <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3f2a7ec142ffc00b6f279549ebee0af7.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
+                </div>
+                <!-- 手机 -->
+                <div class="home-brick row">
+                    <div class="brick-title">
+                        <h2>手机</h2>
+                        <div class="all"><span @click="seeMore">查看全部<i class="icon iconfont el-icon-aliqianjinxiayige"></i></span></div>
+                    </div>
+                    <div class="brick-box">
+                        <div class="box-minor">
+                            <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/574c6643ab91c6618bfb2d0e2c761d0b.jpg?thumb=1&w=468&h=1228&f=webp&q=90">
+                        </div>
+                        <div class="box-main">
+                            <ul class="box-list ">
+                                <li v-for="(item,index) in phoneList" :key="index">
+                                    <a>
+                                        <div class="thumb">
+                                            <img v-lazy="item.imgSrc" style="width:160px;height:160px;">
+                                        </div>
+                                        <h3 class="content-title">{{ item.title }}</h3>
+                                        <p class="desc">{{ item.desc }}</p>
+                                        <p class="price">{{ item.newPrice }}元起<span v-if="showPrice" class="oldPrice">{{ item.oldPrice }}元</span></p>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <!-- 展示图 -->
+                <div class="home-banner row">
+                    <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
+                </div>
+                 <!-- 家电 -->
+                 <div class="home-brick row">
+                    <div class="brick-title">
+                        <h2>家电</h2>
+                        <ul class="all">
+                             <router-link to="/Popular" class="all-li">热门</router-link>
+                             <router-link to="/Video" class="all-li">电视影音</router-link>
+                        </ul>
+                    </div>
+                    <div class="brick-box">
+                        <ul class="box-minor">
+                            <li><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/f256b81e4233333692eece77ed06ebc2.jpg?thumb=1&w=468&h=600&f=webp&q=90"></li>
+                            <li><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/86567ac179a32fa9af05f89a45e57cbe.jpg?thumb=1&w=468&h=600&f=webp&q=90"></li>
+                        </ul>
+                        <div class="box-main">
+                            <router-view></router-view>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- 展示图 -->
+                  <div class="home-banner row">
+                    <a><img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/59e8fc8ba9718c266882719fb4bbcedd.jpg?thumb=1&w=2452&h=240&f=webp&q=90"></a>
+                 </div>
+
+                <!-- 视频 -->
+                <div class="video-brick row ">
+                    <div class="video-title">
+                        <h2>视频</h2>
+                        <div class="all"><span href="#">查看全部<i class="el-icon-aliqianjinxiayige"></i></span></div>
+                    </div>
+                    <div class="video-box">
+                        <ul>
+                            <li v-for="(item,index) in videoList" :key="index">
+                                <div class="video-img">
+                                    <img v-lazy="item.imgSrc">
+                                    <button @click="dialogVisible = true"><i class="el-icon-caret-right"></i></button>
+                                </div>
+                                <h3 class="video-title">{{ item.title }}</h3>
+                                <p class="video-desc">{{ item.desc }}</p>
+
+                                 <el-dialog :visible.sync="dialogVisible"
+                                        :befor-close="handleClose"
+                                        :title="item.title">
+                                    <video-player   class="video-player vjs-custom-skin"
+                                                    ref="videoPlayer"
+                                                  :options="playerOptions"
+                                                  :playsinline="true"
+                                                  @play="onPlayerPlay($event)"
+                                                  @pause="onPlayerPause($event)">
+                                    </video-player>
+                                </el-dialog>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </main>
-        <navToolBar></navToolBar>
-        <navFooter></navFooter>
-    </div>
+        </div>
+    </main>
+    <navToolBar></navToolBar>
+    <navFooter></navFooter>
+  </div>
 </template>
 
 <script>
+import navBanner from '../components/Banner'
 import navHeader from '../components/Header'
 import navFooter from '../components/Footer'
-import navBanner from '../components/Banner'
 import navToolBar from '../components/ToolBar'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import '../assets/swiper/css/swiper.css'
@@ -221,77 +221,23 @@ export default {
       hours: 0,
       minute: 0,
       seconds: 0,
-      timer: '',
-      seq: 0,
-      dialogVisible: false,
-      swiperInfo: [
-        {
-          icon: {
-            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a7c2a3fec92ad95435f8ab8d8407db6c.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
-            backgroundSize: 'cover',
-            backgroundposition: 'center',
-            backgroundRepeat: 'no-repeat'
-          },
-          href: 'https://www.mi.com/a/h/15490.html'
-        },
-        {
-          icon: {
-            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7e882fcbdcafc352dde03c741836399b.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
-            backgroundSize: 'cover',
-            backgroundposition: 'center',
-            backgroundRepeat: 'no-repeat'
-          },
-          href: 'https://www.mi.com/a/h/15490.html'
-        },
-        {
-          icon: {
-            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/400f15aedf3b2981c462e8811e88d384.jpg?w=2452&h=920)',
-            backgroundSize: 'cover',
-            backgroundposition: 'center',
-            backgroundRepeat: 'no-repeat'
-          },
-          href: 'https://www.mi.com/a/h/15490.html'
-        },
-        {
-          icon: {
-            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f306ce6727f8166fd97730c5876bfadc.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
-            backgroundSize: 'cover',
-            backgroundposition: 'center',
-            backgroundRepeat: 'no-repeat'
-          },
-          href: 'https://www.mi.com/a/h/15490.html'
-        },
-        {
-          icon: {
-            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b5bc9a947319a1d7424cb209c632b7d.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
-            backgroundSize: 'cover',
-            backgroundposition: 'center',
-            backgroundRepeat: 'no-repeat'
-          },
-          href: 'https://www.mi.com/a/h/15490.html'
-        }
-      ],
-      swiperOption: {
-        notNextTick: true,
-        grabCursor: true,
-        loop: true,
-        initialSlide: 0,
-        autoplay: true,
-        speed: 800,
-
-        // 左右点击
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-
-        // 分页器设置
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets'
-        }
-
+      showPrice: true,
+      playerOptions: {
+        height: '495',
+        width: document.documentElement.clientWidth,
+        fluid: true, // 当 true时，video.js player将拥有流体大小。换句话说，他将按比例缩放以适应其容器
+        sources: [{
+          type: 'rtmp/mp4',
+          src: [
+            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11c70c96529b6e6938567ec1aa0910e0.mp4' },
+            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7cdabcaa763392c86b944eaf4e68d6a3.mp4' },
+            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e25d81c4922fca5ebe51877717ef9b76.mp4' },
+            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eadb8ddc86f1791154442a928b042e2f.mp4' }
+          ]
+        }],
+        techOrder: ['flash'],
+        autoplay: false, // 如果为true,浏览器准备好时开始回放
+        controls: true
       },
       categoryList: [
         {
@@ -1273,6 +1219,154 @@ export default {
           ]
         }
       ],
+      swiperInfo: [
+        {
+          icon: {
+            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a7c2a3fec92ad95435f8ab8d8407db6c.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
+            backgroundSize: 'cover',
+            backgroundposition: 'center',
+            backgroundRepeat: 'no-repeat'
+          },
+          href: 'https://www.mi.com/a/h/15490.html'
+        },
+        {
+          icon: {
+            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7e882fcbdcafc352dde03c741836399b.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
+            backgroundSize: 'cover',
+            backgroundposition: 'center',
+            backgroundRepeat: 'no-repeat'
+          },
+          href: 'https://www.mi.com/a/h/15490.html'
+        },
+        {
+          icon: {
+            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/400f15aedf3b2981c462e8811e88d384.jpg?w=2452&h=920)',
+            backgroundSize: 'cover',
+            backgroundposition: 'center',
+            backgroundRepeat: 'no-repeat'
+          },
+          href: 'https://www.mi.com/a/h/15490.html'
+        },
+        {
+          icon: {
+            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f306ce6727f8166fd97730c5876bfadc.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
+            backgroundSize: 'cover',
+            backgroundposition: 'center',
+            backgroundRepeat: 'no-repeat'
+          },
+          href: 'https://www.mi.com/a/h/15490.html'
+        },
+        {
+          icon: {
+            backgroundImage: 'url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b5bc9a947319a1d7424cb209c632b7d.jpg?thumb=1&w=2452&h=920&f=webp&q=90)',
+            backgroundSize: 'cover',
+            backgroundposition: 'center',
+            backgroundRepeat: 'no-repeat'
+          },
+          href: 'https://www.mi.com/a/h/15490.html'
+        }
+      ],
+      swiperOption: {
+        notNextTick: true,
+        grabCursor: true,
+        loop: true,
+        initialSlide: 0,
+        autoplay: true,
+        speed: 800,
+
+        // 左右点击
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+
+        // 分页器设置
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets'
+        }
+
+      },
+      timer: '',
+      seq: 0,
+      videoList: [
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/101b19aca4bb489bcef0f503e44ec866.jpg?thumb=1&w=592&h=360&f=webp&q=90',
+          title: 'Redmi 10X系列发布会',
+          desc: 'Redmi 10X系列发布会'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/96563e75833ba4563bd469dd28203b09.jpg?thumb=1&w=592&h=360&f=webp&q=90',
+          title: '小米10 青春版 发布会',
+          desc: ''
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/2fd26bb99b723337a2f8eaba84f7d5bb.jpg?thumb=1&w=592&h=360&f=webp&q=90',
+          title: '小米10 8K手机拍大片',
+          desc: ''
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/a8dd25cab48c60fc6387b9001eddc3f9.jpg?thumb=1&w=592&h=360&f=webp&q=90',
+          title: '小米10发布会',
+          desc: ''
+
+        }
+      ],
+      phoneList: [
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d880ff45a9a3b70527770e01521fc939.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: '小米10 至尊版',
+          desc: '120X 变焦/120W秒充/120Hz屏幕',
+          newPrice: '5299'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3b19bf0e7e599c1bbbce510fb0dbc8bc.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: 'Redmi K30 至尊版',
+          desc: '120Hz弹出全面屏，天玑1000+旗舰处理器',
+          newPrice: '1999'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/237942bfcaf2bbe82fbe966c2f584d69.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: ' 腾讯黑鲨3S ',
+          desc: '骁龙865处理器，120Hz刷新率',
+          newPrice: '3999'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c892a7640f58032489cbff8a948b50f9.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: 'Redmi 9A',
+          desc: '5000mAh长循环大电量，6.53"超大护眼屏幕',
+          newPrice: '599'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8729282b199b3ec51e31c1b6b15f3f93.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: '小米10 青春版 5G',
+          desc: '50倍潜望式变焦 / 轻薄5G手机',
+          newPrice: '1899',
+          oldPrice: '2099'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: '小米10',
+          desc: '骁龙865/1亿像素相机',
+          newPrice: '3799',
+          oldPrice: '3999'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d037b19b924fdf15b1cc9e671d6628fe.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: 'Redmi K30 Pro ',
+          desc: '双模5G，骁龙865，弹出全面屏',
+          newPrice: '2999',
+          oldPrice: '3699'
+        },
+        {
+          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/7cfdbce40301133a287e9e57faa37bdf.jpg?thumb=1&w=400&h=400&f=webp&q=90',
+          title: 'Redmi K30 Pro 变焦版',
+          desc: '双模5G，骁龙865，弹出全面屏',
+          newPrice: '3399',
+          oldPrice: '3999'
+        }
+      ],
       swiperList: [
         {
           index: 1,
@@ -1386,122 +1480,47 @@ export default {
           ]
         }
       ],
-      playerOptions: {
-        height: '495',
-        width: document.documentElement.clientWidth,
-        fluid: true, // 当 true时，video.js player将拥有流体大小。换句话说，他将按比例缩放以适应其容器
-        sources: [{
-          type: 'rtmp/mp4',
-          src: [
-            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11c70c96529b6e6938567ec1aa0910e0.mp4' },
-            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7cdabcaa763392c86b944eaf4e68d6a3.mp4' },
-            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e25d81c4922fca5ebe51877717ef9b76.mp4' },
-            { videoUrl: 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eadb8ddc86f1791154442a928b042e2f.mp4' }
-          ]
-        }],
-        techOrder: ['flash'],
-        autoplay: false, // 如果为true,浏览器准备好时开始回放
-        controls: true
-      },
-      videoList: [
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/101b19aca4bb489bcef0f503e44ec866.jpg?thumb=1&w=592&h=360&f=webp&q=90',
-          title: 'Redmi 10X系列发布会',
-          desc: 'Redmi 10X系列发布会'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/96563e75833ba4563bd469dd28203b09.jpg?thumb=1&w=592&h=360&f=webp&q=90',
-          title: '小米10 青春版 发布会',
-          desc: ''
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/2fd26bb99b723337a2f8eaba84f7d5bb.jpg?thumb=1&w=592&h=360&f=webp&q=90',
-          title: '小米10 8K手机拍大片',
-          desc: ''
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/a8dd25cab48c60fc6387b9001eddc3f9.jpg?thumb=1&w=592&h=360&f=webp&q=90',
-          title: '小米10发布会',
-          desc: ''
-
-        }
-      ],
-      phoneList: [
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d880ff45a9a3b70527770e01521fc939.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: '小米10 至尊版',
-          desc: '120X 变焦/120W秒充/120Hz屏幕',
-          newPrice: '5299'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/3b19bf0e7e599c1bbbce510fb0dbc8bc.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: 'Redmi K30 至尊版',
-          desc: '120Hz弹出全面屏，天玑1000+旗舰处理器',
-          newPrice: '1999'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/237942bfcaf2bbe82fbe966c2f584d69.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: ' 腾讯黑鲨3S ',
-          desc: '骁龙865处理器，120Hz刷新率',
-          newPrice: '3999'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/c892a7640f58032489cbff8a948b50f9.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: 'Redmi 9A',
-          desc: '5000mAh长循环大电量，6.53"超大护眼屏幕',
-          newPrice: '599'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/8729282b199b3ec51e31c1b6b15f3f93.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: '小米10 青春版 5G',
-          desc: '50倍潜望式变焦 / 轻薄5G手机',
-          newPrice: '1899',
-          oldPrice: '2099'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: '小米10',
-          desc: '骁龙865/1亿像素相机',
-          newPrice: '3799',
-          oldPrice: '3999'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d037b19b924fdf15b1cc9e671d6628fe.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: 'Redmi K30 Pro ',
-          desc: '双模5G，骁龙865，弹出全面屏',
-          newPrice: '2999',
-          oldPrice: '3699'
-        },
-        {
-          imgSrc: '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/7cfdbce40301133a287e9e57faa37bdf.jpg?thumb=1&w=400&h=400&f=webp&q=90',
-          title: 'Redmi K30 Pro 变焦版',
-          desc: '双模5G，骁龙865，弹出全面屏',
-          newPrice: '3399',
-          oldPrice: '3999'
-        }
-      ]
+      dialogVisible: false
     }
   },
   components: {
     navHeader,
     navFooter,
-    navBanner,
     navToolBar,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    navBanner
   },
   directives: {
     swiper: directive
   },
   computed: {
     swiper () {
-      return this.$refs.mySwiper.$swiper
+      return this.$refs.mySwiper.swiper
+    },
+    player () {
+      return this.$refs.videoPlayer.player
     }
   },
   mounted: function () {
-    console.log('Current Swiper instance object', this.swiper)
+    console.log('this is current swiper instance object', this.swiper)
     this.swiper.slideTo(3, 1000, false)
     this.countdown()
+  },
+  watch: {
+    //   更改视频源videoUrl从弹出框组件传值
+    videoUrl: function (val) {
+      if (val !== '') {
+        this.$ref.VideoPlayer.player.src(val)
+      }
+    },
+    // 弹出框关闭后暂停 否则一直在播放 state从弹出框组件传值
+    state: function (val) {
+      if (val) {
+        this.$ref.videoPlayer.player.pause()
+      }
+    }
+
   },
   methods: {
     countdown: function () {
@@ -1528,13 +1547,47 @@ export default {
       setTimeout(function () {
         that.countdown()
       }, 1000)
+    },
+    onPlayerPlay (player) {
+
+    },
+    onPlayerPause (player) {
+
+    },
+    playerStateChanged (player) {
+
+    },
+    details () {
+      this.$router.push({
+        path: '/Homepage'
+      })
+    },
+    spikeBtn () {
+      this.$router.push({
+        path: '/Homepage'
+      })
+    },
+    companyBtn () {
+      this.$router.push({
+        path: '/Company'
+      })
+    },
+    seeMore () {
+      this.$router.push({
+        path: '/PhoneDetails'
+      })
     }
+  },
+  beforeDestroy () {
+    clearTimeout(this.countdown)
+    clearTimeout(this.timer)
   }
+
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/main.scss";
+@import url("../assets/scss/main.scss");
 .el-dialog{
     width: 880px;
     height: 495px;

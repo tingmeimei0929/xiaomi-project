@@ -1,5 +1,5 @@
 <template>
-  <el-form class="login-type" status-icon :rules="rules" :model="ruleForm" ref="ruleForm">
+  <el-form class="login-type" status-icon :rules="rules" :model="ruleForm" ref="ruleForm" :visible.sync="isLogin">
     <el-form-item class="account" prop="username">
       <el-input type="text"
              placeholder="邮箱/手机号码/小米ID"
@@ -54,7 +54,8 @@ export default {
       if (value === '') {
         callback(new Error('请输入账号'))
       } else {
-        const reg = /^(?!(\d+)$)[a-zA-Z\d_]{4,20}$/
+        //   用户名以字母开头，长度在5-16之间，允许字母数字下划线
+        const reg = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/
         if (reg.test(value)) {
           callback()
         } else {
@@ -71,16 +72,6 @@ export default {
       rules: {
         username: [
           { required: true, message: '请输入账号', trigger: 'blur' },
-          //   {
-          //     pattern: /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
-          //     message: '请输入有效的邮箱账号',
-          //     trigger: 'blur'
-          //   },
-          //   {
-          //     pattern: /^[1][3,4,5,6,7,8,9][0-9]{9}$/,
-          //     message: '请输入正确的11位手机号码',
-          //     trigger: 'blur'
-          //   },
           { validator: username, trigger: 'blur' }
         ],
         password: [
@@ -95,7 +86,16 @@ export default {
     }
   },
   computed: {
-
+    //   获取vuex中的showLogin,控制登录组件是否显示
+    isLogin: {
+        get() {
+            return this.$store.getters.getShowLogin
+        },
+        set(val) {
+            this.$refs["ruleForm"].resetFields()
+            this.$setShowLogin(val)
+        }
+    }
   },
   methods: {
     ...mapActions(['setUser', 'setShowLogin']),
@@ -111,21 +111,27 @@ export default {
             if (res.data.code === 200 && res.data.result === true) {
               // 登录信息存到本地
               let user = JSON.stringify(res.data.userName)
+              localStorage.setItem("user", user)
               console.log(user)
               // 登录信息存到vuex
               this.setUser(res.data.user)
-              alert('登录成功')
+              this.$notify({
+                message: '登录成功'
+              })
               this.$router.push({ path: "/" });
             } else {
               // 清空输入框的校验状态
               this.$refs['ruleForm'].resetFields()
-              alert('登录失败')
+              this.$notify({
+                message: '登录失败'
+              })
             }
-          })
-            .catch(function (error) {
-              console.log(error)
+          }).catch(err => {
+              return Promise.reject(err)
             })
-        }
+        } else{
+            return false
+         }
       })
     },
     signup () {

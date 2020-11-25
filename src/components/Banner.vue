@@ -37,7 +37,7 @@
                 </ul>
               </div>
               <button type="primary"
-                      class="btn"><i class="icon iconfont el-icon-alichaxun"></i></button>
+                      class="btn"><i class="el-icon-search"></i></button>
             </div>
         </div>
     </div>

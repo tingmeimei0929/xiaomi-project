@@ -45,6 +45,19 @@ import SIdentify from '../../components/SIdentify'
 export default {
   name: 'Registered',
   data () {
+    //   用户名的校验方法
+    let newUserName = (rule, value, callback) => {
+        if (!value) {
+            return callback(new Error('请输入账号'))
+        }
+        // 用户名以字母开头，长度在5-16之前，允许字母数字下划线
+        const reg = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/
+        if (reg.test(value)) {
+          callback()
+        } else {
+          callback(new Error('用户名不正确'))
+        }
+    }
     return {
       ruleForm: {
           newUserName: '',
@@ -53,11 +66,7 @@ export default {
       rules: {
         newUserName: [
             { required: true, message: '请输入账号', trigger: 'blur' },
-            {
-                pattern: /^(?!(\d+)$)[a-zA-Z\d_]{4,20}$/,
-                message: '用户名不正确',
-                trigger: 'blur'
-            }
+            { validator: newUserName, trigger: "blur" }
         ],
         newPassword: [
           { required: true, message: '请输入密码', trigger: 'blur' },
@@ -65,7 +74,8 @@ export default {
             pattern: /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/,
             message: '密码不正确',
             trigger: 'blur'
-          }
+          },
+          { validator: newPassword, trigger: "blur" }
         ]
       }
     }
@@ -97,14 +107,19 @@ export default {
                     console.log(res)
                     console.log(data)
                     if (res.data.code === 200) {
-                        alert('注册成功')
+                        this.$notify({
+                            title: '注册成功'
+                        })
                         this.userName = ''
                         this.userPassword = ''
                         this.$router.push({
                             path: '/Login'
                         })
                     } else {
-                        alert('该用户名已存在～')
+                        this.$notify({
+                            title: '注册失败',
+                            message: '该用户名已存在～'
+                        })
                     }
                 })
             }
