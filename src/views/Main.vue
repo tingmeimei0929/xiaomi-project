@@ -183,7 +183,6 @@
                                 <p class="video-desc">{{ item.desc }}</p>
 
                                  <el-dialog :visible.sync="dialogVisible"
-                                        :befor-close="handleClose"
                                         :title="item.title">
                                     <video-player   class="video-player vjs-custom-skin"
                                                     ref="videoPlayer"

@@ -64,7 +64,6 @@ export default {
       }
     }
     return {
-      tishi: '',
       ruleForm: {
         username: '',
         password: ''
