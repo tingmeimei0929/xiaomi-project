@@ -210,7 +210,7 @@ import navHeader from '../components/Header'
 import navFooter from '../components/Footer'
 import navToolBar from '../components/ToolBar'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import '../assets/swiper/css/swiper.css'
+
 export default {
   name: 'Main',
   data () {
@@ -1586,6 +1586,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('../assets/swiper/css/swiper.css');
 @import url("../assets/scss/main.scss");
 .el-dialog{
     width: 880px;
